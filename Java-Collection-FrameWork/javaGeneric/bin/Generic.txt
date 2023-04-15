@@ -1,0 +1,44 @@
+Main Objective of Generic -->> 
+->To provide Type safety
+->To solve the problem related to type-casting in collection
+->To enable developer to writes less redundant code
+->COde Reusability 
+->Type Check at compile time
+-----------------------------------
+
+wild Card : ?
+
+Upper Bounded WildCard : ? extends A
+Lower Bounded WildCard : ? super B
+
+--------------------------------------
+
+Restriction with WildCards--->>>
+1-> We cannot use them as a type barometer in class level that is in the header of the reference type declaration,wild cards cannot be used
+2->that unlike type parameters, a wild card does not support multiple modes.
+3->we have no restrictions on these operations, but the thing is that if I am using unbounded wild card type or upper bound and wild card type for this list, then we can perform only read operation inside this method.
+	we can't perform write operation
+	
+---------------------------------------------
+Behaviour of generic and non-generic area
+
+----------------------------------------------
+
+Type Erasure : java Compiler
+
+--------------------------------------------------
+SUMMARY--->>>
+->Generic Type
+->SubClassing
+->Collection with generic
+->Raw-Type
+->Multiple Type Parameter
+->Sub-Typing
+->Generic-method
+->Bounded Type Parameter
+->WildCards, Upper Bounded WildCards
+->Lower Bounded wildCard
+->Using wildcards- Restrication with wildcards
+->Behaviour in Generic and Non generic Area
+->Type-Erasure
+

@@ -1,0 +1,99 @@
+NEED OF THE CONCURRENT COLLECTION------>>>>>
+
+->Data Inconsistency problem -->>
+->Synchronized->used synchronized blocks or methods so that only one thread can use that object or could block at a given time.
+->the performance problem in all Java collections of synchronization, Java introduced concurrent collections.
+-------------------------------------------------------------
+
+CONCURRENT MODIFICATION EXCEPTION-->>call ConcurrentModiD.java
+
+------------------------------------------------------------
+
+CONCURRENT COLLECTION THE NEW WAY-->>newly added concurrent collections uses improve locking mechanism.
+
+-->>As the old collections are blocking the whole object, the new collection improved algorithm or data structure, and began by locking only a particular segment in the collection.
+Rather than locking the full collection object, this helps improving the performance on also the new collections do take care of concrete modification exception as they can be modified 
+simultaneously among several trades.
+-------------------------------------------------
+
+CONCURRENTHashMap Hierarchy And Methods-->>  MAP(I)
+												|
+											CONCURRENT Map(I)
+												|
+											ConcurrentHashMap(C)
+											
+-------------------------------------------------------
+
+CONCURRENTHASHMAP INTERNAL IMPLEMENTATION--->>>
+
+1->HashMap-> Not Thread Safe - so in multi threading environment this data Structure can lead to data inconsistency issues.
+2->HashTable-> Thread safe but poor in performance as the full object get locked in read/write. Only one thread is allowed to operate.
+3->ConcurrentHashMap-> Thread Safe and better in performance as no lock while read and segment is locked while write not full object.
+
+->so total of 16 buckets and provide more efficient locking mechanism. So, however, while there is no lock. 
+Of the object and white Ryder object, only the segment of the season will get logged on, which the credit rating.
+So 16 threads can operate simultaneously on any concurrent hash map object
+This default number, you can change this by initializing a concurrent hash map instance.
+
+ConcurrentHashMap(int initialCapacity, flaot loadFactor, int concurrencyLecel)
+
+And this number of regions is called concurrency level.So by default, the concurrency level is 16.
+
+->ConcurrentHashMap only locks a portion of the collection on update.
+->ConcurrentHashMap is better than Hashtanle and synchronize Map as well.
+->ConurrentHashMap is fail safe does not throws ConcurrentModificationException.
+->Null is not allowed as a key or value in ConcurrentHashMap.
+->Level of concurrency can be chosen by the programmer on a ConcurrentHashMap while initializing it.
+
+---------------------------------------------------------------------
+ConcurrentHashMap in Multithreading environment-->>
+
+1->fail safe--->>the HashMap fails fast and throws concurrent modification exception to prevent data and consistency
+and to let the user know that what some other threat is modifying the collection while iteration.
+
+2->Fail Fast--->>But concurrent hash map is FailFast And the internal mechanism of and Hashmat supports the iteration and modification simultaneously.
+-------------------------------------------------------------------------------
+
+COPYONWRITEARRAYLIST Hierarchy--->>> Collection(I) ->java.util package
+										|
+										List(I)->java.util package
+							    		|
+							 		CopyOnWriteArrayList(C)->java.util.concurrent package
+							 		
+->If multiple threads are operating on the copyOnArrayList right, at least object then for there is no logging and every thread can reach simultaneously.
+	But noted very carefully that whenever there is an update or write operation, there will be a clone copy that will get created.And that update operation.
+	All right, operation will be performed on that cloned copy rather than on the main object.
+	
+Main Object -->> Read operation will we done on the main object Rather than clone object.
+Clone Object -->> Write operation will we done on the Clone object rather than main object.
+
+After update the object will be sync by JVM internally.
+
+
+NOTE-->> that for every update, a separate clone copy will get created. So if there are 100 objects, 100 clone copy will get created.
+
+we should use this data structure only one least number of update or rights to be performed by now.
+
+THE MAIN DIFFERENCE B/W ARRAYLIST AND WRITEONARRAYLIST--->>>
+1->The First that is iterator of CopyOfWriteArrayList is FailSafe.
+2->CopyOfWriteArrayList is Thread safe version on ArrayList.
+3->iterator of ArrayList can perform remove Operation and CopyOnWriteArrayList can't do this.
+	because to synccing operation, if we will try to do that than we can "Unsupported Operation exception.
+	
+-----------------------------------------------------------------------------------------------------
+
+CopyOnWriteArraySet --->>>> Is a concurrent version of set -->>
+							But remember that it's internally use CopyOnWriteArrayList. and mechanism is exatly as same CopyOnWriteArrayList.
+							Main Object -->> Read operation will we done on the main object Rather than clone object.
+							Clone Object -->> Write operation will we done on the Clone object rather than main object.
+							
+			There is no much difference b/w them CopyOnWriteArraySet is store only unique elements and CopyOnWriteArrayList can't.
+							After update the object will be sync by JVM internally.
+
+
+CopyOnWriteArraySet Hierarchy--->>> Collection(I) ->java.util package
+										|
+										Set(I)->java.util package
+							    		|
+							 		CopyOnWriteArraySet(C)->java.util.concurrent package
+	

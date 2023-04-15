@@ -1,0 +1,67 @@
+Streams-->> Process data fast using multiCore Processor
+
+Stream() added in collection in java 1.8 version
+So any collection object have use this method
+
+ Collection(I) --->>> stream()
+ 	
+ Streams - filter and map
+ 	
+ 	Data Processing with Streams
+ 		_________|__________
+ 		|					|
+ 	Configuration		Processing
+ 	_____|______
+ 	|			|
+ Filter		  Map()
+ 
+ Filter-->> it is a boolean condition by which you can filter the existing data
+ 			the data will we change or same if no condition will be same
+ 			
+ syntax -->> public Steam filter (Predicate<T> t)
+ 			ex-> list.stream().filter(i->i>30)
+ 
+ map -->>map is to process the data based on some condition and return back the data.That modified data.
+ 		Data will remain same before and after the processing the data
+ 		
+ syntax-->> public Stream map(Function<T,t> f)
+ 		ex->list.stream map(i->i*2);
+ 		
+ ----------------------------------------------
+ By Default we use Sequential Stream --->>>
+ 
+ 
+ Parallel Streams -->> 1->Sequential Stream
+ 					   2->Parallel Stream Using 4 cores
+ 					   
+ 					  
+ 					  
+2-->>
+
+	parallelStream() method on a collection 
+	parallel() method on a stream
+	
+	
+Stateless : state of one element does not affect another element
+non-interfering : data source is not affected while operation
+associative : one operation result is not affected by the order of data under processing
+ 					  
+ 					  
+ 					  
+ 					  
+ 					  
+ 					  
+ 					  
+ 					  
+ 					  
+ 					  
+ 					  
+ 					  
+ 					  
+ 					  
+ 					  
+ 					  
+ 					  
+ 					   
+ 					   
+ 	

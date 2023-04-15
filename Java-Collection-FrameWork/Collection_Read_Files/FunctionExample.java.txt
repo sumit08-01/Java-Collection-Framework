@@ -1,0 +1,13 @@
+package com.basicsstrong.lambda;
+
+import java.util.function.Function;
+
+public class FunctionExample {
+
+	public static void main(String[] args) {
+		String s = "BasicsStrong";
+		Function<String,Integer> fun = str -> str.length();
+		int len = fun.apply(s);
+		System.out.println(len);
+	}
+}

@@ -1,0 +1,165 @@
+
+ MAP-->>An Interface which represent a mapping between a key and value.
+ 		-Keys and values are objects, can be any data type.
+ 		-Duplicate keys are not allowed, values can be duplicated
+ 		-Collection of entry-objects
+ 		
+ METHODS-->>
+ 	-size
+ 	-isEmpty
+ 	-containsKey
+ 	-boolean containsValue(obj value)
+ 	-V get(object key)-it return the values which the specified key is mapped
+ 	-V put(K key, V value)
+ 	-V remove(Object key)
+ 	-void putAll(Map<? extends K, ? extends V> m)
+ 	-Void clear()
+ 	-Set<K> keySet()
+ 	-Collection<V> values()
+ 	-entrySet()
+ 	-boolean equals(object o)
+ 	-int hashCode()
+ 	-replaceAll()
+ 	-putifAbsent
+ 	-default boolean remove(Object key, Object value)
+ 	-merge
+ 	-of
+ 	-ofEntries
+ 	
+ --------------------------------------------------------------------------
+ HASING-->>>
+ 			HashCode/sizeOfTheBox==Obj have that index
+ 			
+----------------------------------------------------------------------------
+
+1->HashMap-> Map
+			  |
+			 hashMap(HasHTable)
+			  |
+			LinkedHashMap  
+			
+		-Insertion Order is not preserved
+		-Duplicated keys are not allowed 
+		-Allows null as key.(Only once),value can be null more than once.
+		-heterogeneous elements are allowed as key and value both
+		-Implements Serializable and Cloneable interface
+		-Extends an abstract class AbstractMap
+		-Best choice for search operations
+		-Uses Hashing to store data
+		-Hashing is applied on the keys of the HashMap.
+		
+	-hashmap use linkedList to store the values
+	
+------------------------------------------------------
+DIFFERENCE B/W HASHTABLE AND HASHMAP-->>
+	HashMap-->> 
+				-Not Thread-Safe
+				-Fast but data may be inconsistent
+				-Allows one null key, multiple null values
+				-1.2 version
+				-Extends AbstractMap(c)
+	
+	
+	
+	HashTable-->>
+				-Thread-Safe
+				-slow because of locking
+				-Null key and values are not allowed
+				-Legacy class 
+				-Extends Dictionary(c)
+				
+-----------------------------------------------------------
+
+2->Linked HashMap-->> HashTable + LinkedList
+					Map(I)
+					  |
+					HashMap(c)
+					  |
+					LinkedHashMap(c)
+					
+--------------------------------------------------------
+
+HashMap -->>  -Insertion order is not preserved
+			  -1.2 version
+			  
+LinkedHashMap -->>  -Insertion Order is preserved with the help of linkedList
+					-1.4 version
+					
+	used for developing cache based applications
+	
+-------------------------------------------------------
+3->IdentityHashMap-->> map(I)-->>identityHashMap(C)
+
+
+hashMap --->>> -.equals Method 
+			   - Key1.equals(Key2)
+			   
+			   
+			   
+IdentityHashMap --->>> - ==operator(dentity hash map also does not allow duplicate keys, but the twist here is that Jim)
+									uses a quality operator to compare the keys.
+									That is check is the reference of both the keys are equal or not.
+									If the value of the keys are equal, but would the Keys point to different addresses, 
+									then JVM allows the key to get added an identity.
+					   -key1==key2
+					   
+-----------------------------------------------------
+	
+	WeakHashMap-->>
+					Object without any references is send to garbage Collection
+					Garbage collectors will not be able to clean or collect the object that is present as key inside the Hashmap
+					
+HashMap -->> Dominates over Garbage Collection Mechanism
+			 Implements Serializable and Cloneable Interface
+			 
+WeakhashMap -->> Garbage Collection Mechanism dominates over it
+				 does not implements Serializable and cloneable Interface
+				 
+--------------------------------------------------------
+
+4->SortedMap(I) -> map(I)-->>SortedMap(I) : it store value in sorted order
+							Sorting based on the key not on the value
+							sorting in Ascending Order of the key
+							
+							Null key or values are not allowed 
+							The keys are sorted either by natural ordering or by a specified comparator
+							
+Methods -->>   
+				Comparator 
+				subMap
+				headMap
+				taimap
+				firstKey
+				lastKey
+				keySet
+				values
+				entrySet
+				
+---------------------------------------------------
+
+5->NavigableMap Interface : Map(I)-->>SortedMap(I)-->>NavigableMap(I)
+							-Sub Interface of SortedMap 
+							-Contains method related to navigation functionality
+							-Both SortedMap and navigableMap have a same implementation class as TreeMap
+		
+-------------------------------------------------
+
+6->TreeMap : Map(i) -->> SortedMap(I) -->> NavigableMap(I) -->> TreeMap(C) --AbstractMap(C)
+
+	TreeMap : Underlying Data Structure 
+				-Red-Black Tree
+				-Self-balancing Binary Search Tree
+				-used for frequent insertion and deletion 
+				-insertion order is not preserved
+				-duplicate Keys are not allowed(values can be duplicated)
+				-Default Sorting order: Keys of the TreeMap should be homogeneous and comparable
+				-Customized Order : The keys need not be homogeneous and comparable.(Values can be homogeneous or heterogeneous in both above cases
+				-Null key is not allowed, null values are allowed
+		
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	

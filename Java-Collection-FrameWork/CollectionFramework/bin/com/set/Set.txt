@@ -1,0 +1,52 @@
+SET-->> Duplicates are Not allowed
+		Insertion Order is not Preserved
+		Accepts heterogeneous objects
+		
+-------------------------------------------
+
+1->HashSet-uderlying data Structure : HashTable
+		   Does nor allow duplicates
+		   insertion order is not preservied
+		   can add heterogeneous elements
+		   we can add null values also
+		   implements serializable and cloneable interface
+		   
+-------------------------------------------------------
+2->LinkedHashSet-> it is a child class of hashset
+					insertion is preserved in this
+					
+					
+-------------------------------------------------------
+
+3->SortedSet->Collection-set(i)-sortedset(i)-Navigableset(i)-TreeSet(c)
+			Add element in sorted order
+			it only contain homogeneous element because it provide in sorted order
+			
+-----------------------------------------------------------
+
+4->NavigableSet(i)-->> sub interface of sortedset
+					   contains methos=ds related to Navigation functionality'=
+					   both sortedset and Naviagableset have a same implementation class as TreeSet
+					   
+					   
+					   
+----------------------------------------------------------
+
+5->TreeSet-->>    Root
+					|
+					|
+			   /   		\
+			 Less  		Greater
+			 than  		than
+			 root  		root
+			 
+			 BALANCED TREE
+				
+				
+				
+				
+				
+				
+			
+			
+			

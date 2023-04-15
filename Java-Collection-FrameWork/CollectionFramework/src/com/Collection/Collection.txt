@@ -1,0 +1,132 @@
+Collection : A group of discrete object
+and there is no concrete class who's directly implemented Collection Interface
+Collection implemented classes are ->ArrayList, set, queue
+--------------------------------
+Methods of collection interface its work in all classes
+
+1->boolean add(Object o)-> , Return True if Object get added and false if not added
+2->boolean addAll(Collection c) ->
+3->boolean remove(Object o) ->
+4->boolean removeAll(Collection c) ->
+5->boolean retainAll(Collection c) ->
+6->void clear() ->
+7->boolean contains(Object o) ->
+8->boolean containsAll(Collection c) ->
+9->boolean isEmpty(Collection c) ->
+10->int size() ->
+11->Iterator iterator() -> provides cursor to get objects of collection one by one. and return Iterator Object
+12->Object[] toArray() -> Convert Invoking Collection to Array
+--------------------------------------------------------
+Collection VS Collections
+
+Collection is a ROOT INTERFACE OF COLLECTION FRAMEWORK while 
+Collections is a UTILITY CLASS FOR COLLECTION OBJECTS in which some pre define methods are (sort(),reverse(), shuffle(), binarySearch(), disjoint() and many more)
+BOTH ARE PRESENT IN JAVA.UTIL 
+
+--------------------------------------------------------
+1->List-it is a child interface of collection interface, it extends collection interface
+characterstics of List-->>
+-->>it is a ordered collection of element and it allows duplicates too
+-->>Insertion order is also preserved
+-->>List allowa Positional Access to Elements--
+	List a = new ArrayList();
+	List l = new LinkedList();
+	List v = new Vector();
+	List s = new Stack();
+	
+-------------------------------------------------------------
+1->>ArrayList--->>
+
+-->>Underlying Data Structure:
+	Insertion order is also preserved
+	Resizable or Growable Array 
+	allows duplicate elements
+	accepts heterogeneous objects
+
+-->>Important concept
+	->It is mandatory that the objects should be serializable.
+	->That is, the object should implement the serializable interface, and that's why every collection,class or interface by default implements or extend this serializable interface.
+	->And also, every collection class implements colonial interface by which we can create duplicate duplicate
+	  objects so that we can operate on those objects and later compare them with the original ones if necessary.
+	 ->arraylist also implements random access interface.is present in java.util package.It is just a marker interface.
+	 	any random element can be accessed the same speed
+	 ->so they need to perform retrieval operation frequently on any election analyst and vector our best choices.
+	 ->List is not recommended to use for insertion and deletion, because it take more time
+------------------------------------------------------------
+
+2->LinkedList->
+	Insertion order is also preserved
+	Resizable or Growable Array 
+	allows duplicate elements
+	accepts heterogeneous objects
+	Null insertion is possible
+	
+Difference b/w LinkedList and ArrayList
+
+ArratList-> 
+			Not Recommended to use for insertion and deletion in middel.(t requires many shifts of element of that arrayList)
+			Best choice for retrieving opertations
+
+LinkedList->
+			Best Choice if frequent operation are insertion and deletion in middle.(it requires only a change in the address point of the particular node head if you want)
+			Not recommended for retrieval operations(JVM goes one by one to every node of the List)
+-------------------------------------------------------------------
+
+3->Vector->It is leagcy classes(1.0)
+	Insertion order is also preserved
+	Resizable or Growable Array 
+	allows duplicate elements
+	accepts heterogeneous objects
+	Vector are thread-safe(One thread at a time)
+	implements Serializable, Cloneable, RandomAccess Interface
+	
+difference b/w Arraylist and Vector
+ArrayList-> 
+			Methods in ArrayList are not Synchronized.Not Thread Safe
+			Performance is relatively high
+			Non-legacy class(came in 1.2 version)
+Vector->
+		All methods in Vector are Synchronized.Thread Safe
+		Performance is low.
+		Legacy class(since 1.0 version)
+		
+--------------------------------------------------------------
+
+4->Stack-> It is also leagcy classes(1.0)
+	Insertion order is also preserved
+	Resizable or Growable Array 
+	allows duplicate elements
+	accepts heterogeneous objects
+	Based on the LIFO i.e. LAST IN FIRST OUT
+	 
+-----------------------------------------------------------------
+
+	CURSORS--->>>An indicator to show the current position of your object or element.
+	
+Four types of Cursors: -> Enumeration
+						  Itetator
+						  ListIterator
+						  Spliterator
+						  
+COMPRESSION-->>>
+PROPERTIES			ENUMERATION					ITREATORS								lISTITERATOR
+-USED fOR			lEGACY CLASSES OBJECTS		for any collection object				for list class objects
+-LEGACY				YES							NO										no
+-DIRECTION FLOW		FORWARD						Forward									forward and backward
+-ACCESS WE CAN GET	ONLY READ					read and remove							read,remove,replace and add
+-OBJECT REATION		BY USING ELEMENTS() 		by Using iterator()						Byusing ListIterator() method of List(Interface)
+					METHOD OF VECTOR CLASS 		method of collections(interface)
+-METHODS			hasMoreElements()			hasNext()								hasNext()
+					nextElement()				next()									next()
+												remove()								nextIndex()
+	 																					hasPrevious()
+	 																					Previous()
+																						PreviousIndex() 
+																						remove()
+																						Add(Object o)
+																						Set(Object o)
+
+
+
+
+

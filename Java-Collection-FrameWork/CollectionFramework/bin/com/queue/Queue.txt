@@ -1,0 +1,5 @@
+Queue(I)-->>FIFO
+
+1->PriorityQueue->: Collection(I)->Queue(I)->PriorityQueue
+					Insertion order is not preserved and duplicate are not allowed
+					Null insertion is not allowed

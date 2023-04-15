@@ -1,0 +1,56 @@
+
+COMPARABLE INTERFACE-->> it will give 3 int value (-ve,+ve, zero)
+	Present in java.lang package
+	contains only one method
+		public int compareTo(Object obj)-->>Default natural sorting order
+	Meant for Default Natural Sorting Order
+	
+if we want to add these three elements "M", "R" "k"  to the tree set, by using Default natural sorting order
+	TreeSet data = new TreeSet();
+	data.add("M");       --->>without competition, it will be added as the first         
+	data.add("R"); "R".compareTo("M")=>+ve value, it will added as ,i
+										it will give us a positive means plus one values that will be added to the left.
+										because value of R is greater than the ASCII value of "M"
+	data.add("K"); "K".compareTo("M")=>-ve, And so it will be added to the right of them.
+	
+public int compareTo(Object obj)-->>FOR NATURAL SORTING ORDER
+	Object to be insert							object already inserted
+					\								/
+					 \							   /
+					  \							  /
+					  		obj1.compareTo(obj2)
+					  				  |
+		  							  |
+		  							  | 
+		  							/ |	\
+		  						   /  |	 \
+		  				obj1<obj2   obj1==obj2	obj1>obj2
+		  					(-1)	   (0)			(+1)
+		  
+		  
+IF WE DON'T WANT TO NATURAL SORTING ORDER-->>We want to customize the sorting.
+											So if you want to insert the values in descending order 
+											we should go for comperator interface. 
+		  
+---------------------------------------------------------------------------------------------
+
+Comparator Interface--->>>
+						present in java.util package
+						contains two method
+							>Public int compare(Object obj1, Object obj2)
+							>Public boolean equals(Object obj)
+						Meant for Customized Sorting Order
+						
+1->public int compare(Object obj1, Object2 obj2)
+	You can give your own implementation to this method
+	
+2->public boolean equals(Object obj)
+	implementation is not required(because Object class have this)
+	As Object is the super or parent class for every java class and this equals method is already present in that.
+	
+	
+	
+		  
+		  
+		  
+		  
